@@ -1,0 +1,313 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".Merchant_MM.CategorySetting_new">
+
+    <android.support.design.widget.AppBarLayout
+        android:id="@+id/appbarlayout"
+        android:layout_width="match_parent"
+        android:layout_height="35dp"
+        android:theme="@style/AppTheme.AppBarOverlay">
+
+        <!--<android.support.design.widget.CollapsingToolbarLayout
+            android:id="@+id/toolbar1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fitsSystemWindows="true"
+            app:contentScrim="?attr/colorPrimary"
+            app:layout_scrollFlags="scroll|exitUntilCollapsed"
+            android:visibility="visible">-->
+
+            <android.support.v7.widget.Toolbar
+                android:id="@+id/toolbar1"
+                android:layout_width="match_parent"
+                android:layout_height="35dp"
+                app:layout_collapseMode="pin"
+                app:popupTheme="@style/AppTheme.PopupOverlay">
+
+            <ImageView
+                android:id="@+id/refresh"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:src="@drawable/ic_refresh"
+                android:layout_gravity="right"/>
+
+            </android.support.v7.widget.Toolbar>
+
+    </android.support.design.widget.AppBarLayout>
+
+    <!--<include
+        layout="@layout/catlist"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />-->
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <GridView
+            android:id="@+id/catgrid"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:numColumns="4"/>
+
+        <LinearLayout
+            android:id="@+id/laysubcat"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:visibility="gone"
+            android:elevation="10dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/txtselsubcat"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/shape_curve_blue"
+                android:text="@string/selectsubcat"
+                android:textColor="@color/white"
+                android:textStyle="bold"
+                android:textSize="13sp"
+                android:paddingLeft="7dp"
+                android:paddingTop="5dp"
+                android:paddingBottom="5dp"
+                android:layout_gravity="center_vertical|top"
+                android:gravity="center_vertical"/>
+
+            <GridView
+                android:id="@+id/subcatgrid"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:numColumns="4"
+                android:layout_weight="1"
+                android:background="@color/white"/>
+
+            <Button
+                android:id="@+id/btnclose"
+                android:layout_width="match_parent"
+                android:layout_height="35dp"
+                android:layout_gravity="bottom"
+                android:gravity="center"
+                android:background="@color/colorPrimary"
+                android:text="@string/close"
+                android:textSize="13sp"
+                android:textColor="@color/white"/>
+
+        </LinearLayout>
+
+        <LinearLayout android:id="@+id/coach_mark_master_view"
+            xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            xmlns:coachmark="http://schemas.android.com/apk/res-auto"
+            android:theme="@android:style/Theme.Translucent"
+            android:background="#c0000c00"
+            android:visibility="gone">
+            <!--android:theme="@android:style/Theme.Translucent"-->
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="5dp"
+                android:visibility="visible">
+
+                <ImageView
+                    android:id="@+id/coach_marks_image"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_centerInParent="true"
+                    android:layout_gravity="center_horizontal" />
+
+                <LinearLayout
+                    android:id="@+id/lay1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:layout_marginTop="30dp"
+                    android:layout_marginLeft="48dp">
+
+                    <!--<CheckBox
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:checked="true"
+                        android:buttonTint="@color/white"/>-->
+
+                    <com.vritti.freshmart.Merchant_MM.Model.CoachmarkArrow
+                        android:layout_width="50dp"
+                        android:layout_height="40dp"
+                        coachmark:linewidth="1dp"
+                        android:layout_alignParentStart="true"
+                        android:layout_alignParentTop="true"
+                        coachmark:col="@android:color/white"
+                        coachmark:fromx="1.0"
+                        coachmark:fromy="0.8"
+                        coachmark:midx="0.4"
+                        coachmark:midy="0.7"
+                        coachmark:tox="0.2"
+                        coachmark:toy="0.1"
+                        coachmark:arrow1x="0.1"
+                        coachmark:arrow1y="0.15"
+                        coachmark:arrow2x="0.3"
+                        coachmark:arrow2y="0.15"
+                        android:layout_alignParentLeft="true"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/instr1"
+                        android:textColor="@color/white"
+                        android:textStyle="bold"
+                        android:textSize="15sp"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/lay2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_below="@+id/lay1"
+                    android:layout_marginTop="58dp"
+                    android:layout_marginLeft="32dp">
+
+                    <!--<CheckBox
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:buttonTint="@color/white"
+                        android:visibility="invisible"/>-->
+
+                    <com.vritti.freshmart.Merchant_MM.Model.CoachmarkArrow
+                        android:layout_width="50dp"
+                        android:layout_height="40dp"
+                        coachmark:linewidth="1dp"
+                        android:layout_alignParentStart="true"
+                        android:layout_alignParentTop="true"
+                        coachmark:col="@android:color/white"
+                        coachmark:fromx="0.8"
+                        coachmark:fromy="1.0"
+                        coachmark:midx="0.7"
+                        coachmark:midy="0.4"
+                        coachmark:tox="0.1"
+                        coachmark:toy="0.2"
+                        coachmark:arrow1x="0.15"
+                        coachmark:arrow1y="0.1"
+                        coachmark:arrow2x="0.15"
+                        coachmark:arrow2y="0.3"
+                        android:layout_alignParentLeft="true"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/instr2"
+                        android:textColor="@color/white"
+                        android:textStyle="bold"
+                        android:textSize="15sp"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/lay3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_below="@+id/lay2"
+                    android:layout_marginTop="40dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp">
+
+                    <CheckBox
+                        android:layout_width="30dp"
+                        android:layout_height="25dp"
+                        android:checked="true"
+                        android:buttonTint="@color/white"
+                        android:visibility="visible"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginRight="5dp"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/instr3"
+                        android:textColor="@color/white"
+                        android:textStyle="bold"
+                        android:textSize="15sp"
+                        android:maxLines="5"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/lay4"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_below="@+id/lay3"
+                    android:layout_marginTop="40dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
+                    android:gravity="center_horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/instr4"
+                        android:textColor="@color/white"
+                        android:textStyle="bold"
+                        android:textSize="15sp"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_below="@+id/lay4"
+                    android:gravity="center">
+
+                    <Button
+                        android:id="@+id/btngotit"
+                        android:layout_width="80dp"
+                        android:layout_height="40dp"
+                        android:text="@string/close"
+                        android:textColor="@color/black"
+                        android:textStyle="bold"
+                        android:textSize="15sp"
+                        android:gravity="center"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="40dp"
+                        android:background="@drawable/edittext_border_darkblue"/>
+
+                </LinearLayout>
+
+            </RelativeLayout>
+
+            <!--<anymarthant_MM.Model.CoachmarkArrow
+                android:layout_width="50dp"
+                android:layout_height="70dp"
+                coachmark:linewidth="5dp"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                coachmark:col="@android:color/white"
+                coachmark:fromx="1.0"
+                coachmark:fromy="0.8"
+                coachmark:midx="0.4"
+                coachmark:midy="0.7"
+                coachmark:tox="0.2"
+                coachmark:toy="0.1"
+                coachmark:arrow1x="0.1"
+                coachmark:arrow1y="0.15"
+                coachmark:arrow2x="0.3"
+                coachmark:arrow2y="0.15"
+                android:layout_alignParentLeft="true"/>-->
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+</LinearLayout>
